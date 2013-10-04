@@ -34,7 +34,7 @@ var Buscape = function(){
 			
 			else if (response.statusCode == 200) {
 				
-				var list = JSON.parse(body)["product"][0];
+				var list = JSON.parse(body)["product"];
 				var items = [];
 				
 				for(var i = 0; i < list.length; i++) {
@@ -46,7 +46,7 @@ var Buscape = function(){
 						if(!product.links || !product.links[0])
 							throw new Error("No url for product");
 							
-						var url = product.links[0][0].link.url;
+						var url = product.links[0].link.url;
 						
 						
 						items.push(model.create("item", {

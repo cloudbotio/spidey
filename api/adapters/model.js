@@ -300,7 +300,7 @@ var Model = function(type) {
 			try {
 
 				var buf = crypto.randomBytes(16);
-				return buf.toString('base64');
+				return buf.toString('base64').replace(/\W/g, '');
 
 			} catch (e) {
 				throw new Error(lang.model.hash_error || "Problem generating random hash.");
@@ -507,11 +507,11 @@ var Model = function(type) {
 			var s = rest.sort;
 			delete rest.sort;
 			
-			return db.find(rest).sort(s, function(err, docs){
+			return db.find(rest).limit(l).sort(s, function(err, docs){
 				
 				findCallback(err, docs, cb);
 				
-			}).limit(l);
+			});
 		}
 		else
 			return db.find(rest, function(err, docs){
