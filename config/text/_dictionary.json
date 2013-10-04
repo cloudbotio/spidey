@@ -1,0 +1,1698 @@
+{
+    "sentences": [
+
+        "%(noun)",
+        "%(adjective)",
+
+        "%(noun) sou %(adjective)!",
+        "%(noun) és %(adjective)!",
+        "%(noun) é %(adjective)!",
+        "%(noun) somos %(adjective)!",
+        "%(noun) sois %(adjective)!",
+        "%(noun) são %(adjective)!",
+
+        "%(noun) fui %(adjective)",
+        "%(noun) fois %(adjective)",
+        "%(noun) foi %(adjective)",
+        "%(noun) fomos %(adjective)",
+        "%(noun) fois %(adjective)",
+        "%(noun) foram %(adjective)",
+
+        "esse %(noun) é muito %(adjective)",
+        "esse %(noun) foi muito %(adjective)",
+
+        "%(noun) %(adjective)"
+    ],
+
+    "nouns" : [
+        {
+            "text" : "admiração",
+            "value" : 1
+        },
+        {
+            "text" : "adoração",
+            "value" : 1
+        },
+        {
+            "text" : "ambição",
+            "value" : 1
+        },
+        {
+            "text" : "amor",
+            "value" : 1
+        },
+        {
+            "text" : "angústia",
+            "value" : -1
+        },
+        {
+            "text" : "ansiedade",
+            "value" : -1
+        },
+        {
+            "text" : "antipatia",
+            "value" : -1
+        },
+        {
+            "text" : "apego",
+            "value" : 1
+        },
+        {
+            "text" : "apelo",
+            "value" : 1
+        },
+        {
+            "text" : "apreço",
+            "value" : 1
+        },
+        {
+            "text" : "asco",
+            "value" : -1
+        },
+        {
+            "text" : "aspiração",
+            "value" : 1
+        },
+        {
+            "text" : "atração",
+            "value" : 1
+        },
+        {
+            "text" : "bronca",
+            "value" : -1
+        },
+        {
+            "text" : "carinho",
+            "value" : 1
+        },
+        {
+            "text" : "certeza",
+            "value" : 1
+        },
+        {
+            "text" : "cheiro",
+            "value" : 1
+        },
+        {
+            "text" : "choque",
+            "value" : -1
+        },
+        {
+            "text" : "ciúme",
+            "value" : -1
+        },
+        {
+            "text" : "compaixão",
+            "value" : 1
+        },
+        {
+            "text" : "complexo",
+            "value" : -1
+        },
+        {
+            "text" : "confiança",
+            "value" : 1
+        },
+        {
+            "text" : "consciência",
+            "value" : 1
+        },
+        {
+            "text" : "constrangimento",
+            "value" : -1
+        },
+        {
+            "text" : "convicção",
+            "value" : 1
+        },
+        {
+            "text" : "coragem",
+            "value" : 1
+        },
+        {
+            "text" : "culpa",
+            "value" : -1
+        },
+        {
+            "text" : "curiosidade",
+            "value" : 1
+        },
+        {
+            "text" : "desejo",
+            "value" : 1
+        },
+        {
+            "text" : "desespero",
+            "value" : -1
+        },
+        {
+            "text" : "desprezo",
+            "value" : -1
+        },
+        {
+            "text" : "devoção",
+            "value" : 1
+        },
+        {
+            "text" : "dificuldade",
+            "value" : -1
+        },
+        {
+            "text" : "disposição",
+            "value" : 1
+        },
+        {
+            "text" : "dó",
+            "value" : -1
+        },
+        {
+            "text" : "dor",
+            "value" : -1
+        },
+        {
+            "text" : "dor-de-cabeça",
+            "value" : -1
+        },
+        {
+            "text" : "dúvida",
+            "value" : -1
+        },
+        {
+            "text" : "esperança",
+            "value" : 1
+        },
+        {
+            "text" : "expectativa",
+            "value" : 1
+        },
+        {
+            "text" : "fadiga",
+            "value" : -1
+        },
+        {
+            "text" : "falta",
+            "value" : -1
+        },
+        {
+            "text" : "fascinação",
+            "value" : 1
+        },
+        {
+            "text" : "fobia",
+            "value" : -1
+        },
+        {
+            "text" : "fome",
+            "value" : -1
+        },
+        {
+            "text" : "frio",
+            "value" : -1
+        },
+        {
+            "text" : "gosto",
+            "value" : 1
+        },
+        {
+            "text" : "horror",
+            "value" : -1
+        },
+        {
+            "text" : "ímpeto",
+            "value" : 1
+        },
+        {
+            "text" : "impressão",
+            "value" : 0
+        },
+        {
+            "text" : "instinto",
+            "value" : 0
+        },
+        {
+            "text" : "interesse",
+            "value" : 1
+        },
+        {
+            "text" : "inveja",
+            "value" : -1
+        },
+        {
+            "text" : "irritação",
+            "value" : -1
+        },
+        {
+            "text" : "mágoa",
+            "value" : -1
+        },
+        {
+            "text" : "medo",
+            "value" : -1
+        },
+        {
+            "text" : "moleza",
+            "value" : -1
+        },
+        {
+            "text" : "necessidade",
+            "value" : -1
+        },
+        {
+            "text" : "nojo",
+            "value" : -1
+        },
+        {
+            "text" : "nostalgia",
+            "value" : 1
+        },
+        {
+            "text" : "obsessão",
+            "value" : 1
+        },
+        {
+            "text" : "ódio",
+            "value" : -1
+        },
+        {
+            "text" : "orgulho",
+            "value" : 1
+        },
+        {
+            "text" : "paciência",
+            "value" : 1
+        },
+        {
+            "text" : "paixão",
+            "value" : 1
+        },
+        {
+            "text" : "pânico",
+            "value" : -1
+        },
+        {
+            "text" : "pavor",
+            "value" : -1
+        },
+        {
+            "text" : "pena",
+            "value" : 0
+        },
+        {
+            "text" : "piedade",
+            "value" : 0
+        },
+        {
+            "text" : "prazer",
+            "value" : 1
+        },
+        {
+            "text" : "predileção",
+            "value" : 1
+        },
+        {
+            "text" : "preguiça",
+            "value" : -1
+        },
+        {
+            "text" : "preocupação",
+            "value" : -1
+        },
+        {
+            "text" : "pudor",
+            "value" : -1
+        },
+        {
+            "text" : "raiva",
+            "value" : -1
+        },
+        {
+            "text" : "rancor",
+            "value" : -1
+        },
+        {
+            "text" : "receio",
+            "value" : -1
+        },
+        {
+            "text" : "rejeição",
+            "value" : -1
+        },
+        {
+            "text" : "remorso",
+            "value" : -1
+        },
+        {
+            "text" : "repugnância",
+            "value" : -1
+        },
+        {
+            "text" : "repulsa",
+            "value" : -1
+        },
+        {
+            "text" : "respeito",
+            "value" : 1
+        },
+        {
+            "text" : "responsabilidade",
+            "value" : 1
+        },
+        {
+            "text" : "sabor",
+            "value" : 1
+        },
+        {
+            "text" : "saudade",
+            "value" : 1
+        },
+        {
+            "text" : "segurança",
+            "value" : 0
+        },
+        {
+            "text" : "sensação",
+            "value" : 0
+        },
+        {
+            "text" : "sentimento",
+            "value" : 0
+        },
+        {
+            "text" : "simpatia",
+            "value" : 1
+        },
+        {
+            "text" : "sintoma",
+            "value" : -1
+        },
+        {
+            "text" : "suador",
+            "value" : 0
+        },
+        {
+            "text" : "suspeita",
+            "value" : 0
+        },
+        {
+            "text" : "tentação",
+            "value" : 1
+        },
+        {
+            "text" : "tranquilidade",
+            "value" : 1
+        },
+        {
+            "text" : "trauma",
+            "value" : -1
+        },
+        {
+            "text" : "tristeza",
+            "value" : -1
+        },
+        {
+            "text" : "vergonha",
+            "value" : -1
+        },
+        {
+            "text" : "vontade",
+            "value" : 1
+        }
+    ],
+
+    "verbs": [
+        {
+            "text": "abalar",
+            "participle": "abalado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "abominar",
+            "participle": "abominado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "aborrecer",
+            "participle": "aborrecido",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "abrandar",
+            "participle": "abrandado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "acalmar",
+            "participle": "acalmado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "acalmar",
+            "participle": "acalmado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "acender",
+            "participle": "acendido",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "acovardar",
+            "participle": "acovardado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "adorar",
+            "participle": "adorado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "afligir",
+            "participle": "afligido",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "agitar",
+            "participle": "agitado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "agradar",
+            "participle": "agradado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "alarmar",
+            "participle": "alarmado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "alegrar",
+            "participle": "alegrado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "aliviar",
+            "participle": "aliviado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "alterar",
+            "participle": "alterado",
+            "entity": "verb",
+            "value": 0
+        },
+        {
+            "text": "alucinar",
+            "participle": "alucinado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "alvoroçar",
+            "participle": "alvoroçado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "animar",
+            "participle": "animado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "antipatizar",
+            "participle": "antipatizado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "apiedar",
+            "participle": "apiedado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "apoquentar",
+            "participle": "apoquentado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "apreciar",
+            "participle": "apreciado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "arrasar",
+            "participle": "arrasado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "assanhar",
+            "participle": "assanhado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "atormentar",
+            "participle": "atormentado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "atraiçoar",
+            "participle": "atraiçoado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "atrair",
+            "participle": "atraido",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "atrapalhar",
+            "participle": "atrapalhado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "babar",
+            "participle": "babado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "cativar",
+            "participle": "cativado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "chatear",
+            "participle": "chateado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "cobiçar",
+            "participle": "cobiçado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "comover",
+            "participle": "comovido",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "compadecer",
+            "participle": "compadecido",
+            "entity": "verb",
+            "value": 0
+        },
+        {
+            "text": "conciliar",
+            "participle": "conciliado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "confortar",
+            "participle": "confortado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "conquistar",
+            "participle": "conquistado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "consolar",
+            "participle": "consolado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "consumir",
+            "participle": "consumido",
+            "entity": "verb",
+            "value": 0
+        },
+        {
+            "text": "decepcionar",
+            "participle": "decepcionado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "deleitar",
+            "participle": "deleitado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "desadorar",
+            "participle": "desadorado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "desagradar",
+            "participle": "desagradado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "desagradecer",
+            "participle": "desagradecido",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "desalentar",
+            "participle": "desalentado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "desangustiar",
+            "participle": "desangustiado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "desanimar",
+            "participle": "desanimado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "desapoquentar",
+            "participle": "desapoquentado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "desassossegar",
+            "participle": "desassossegado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "desconfortar",
+            "participle": "desconfortado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "desejar",
+            "participle": "desejado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "desemburrar",
+            "participle": "desemburrado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "desencabular",
+            "participle": "desencabulado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "desencorajar",
+            "participle": "desencorajado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "desenjoar",
+            "participle": "desenjoado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "desesperar",
+            "participle": "desesperado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "desfazer",
+            "participle": "desfazido",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "desiludir",
+            "participle": "desiludido",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "desinteressar",
+            "participle": "desinteressado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "desmotivar",
+            "participle": "desmotivado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "despertar",
+            "participle": "despertado",
+            "entity": "verb",
+            "value": 0
+        },
+        {
+            "text": "despreocupar",
+            "participle": "despreocupado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "desprezar",
+            "participle": "desprezado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "distrair",
+            "participle": "distraido",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "doer",
+            "participle": "doido",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "embaraçar",
+            "participle": "embaraçado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "emburrar",
+            "participle": "emburrado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "encantar",
+            "participle": "encantado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "encorajar",
+            "participle": "encorajado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "enfurecer",
+            "participle": "enfurecido",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "enlouquecer",
+            "participle": "enlouquecido",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "enlutar",
+            "participle": "enlutado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "entristecer",
+            "participle": "entristecido",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "entusiasmar",
+            "participle": "entusiasmado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "envaidecer",
+            "participle": "envaidecido",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "envergonhar",
+            "participle": "envergonhado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "espezinhar",
+            "participle": "espezinhado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "estimar",
+            "participle": "estimado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "estimular",
+            "participle": "estimulado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "exasperar",
+            "participle": "exasperado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "excitar",
+            "participle": "excitado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "expectar",
+            "participle": "expectado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "expiar",
+            "participle": "expiado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "fascinar",
+            "participle": "fascinado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "frustrar",
+            "participle": "frustrado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "fustigar",
+            "participle": "fustigado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "horrorizar",
+            "participle": "horrorizado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "humilhar",
+            "participle": "humilhado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "impacientar",
+            "participle": "impacientado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "incomodar",
+            "participle": "incomodado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "inferiorizar",
+            "participle": "inferiorizado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "inquietar",
+            "participle": "inquietado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "intimidar",
+            "participle": "intimidado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "invejar",
+            "participle": "invejado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "irar",
+            "participle": "irado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "irritar",
+            "participle": "irritado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "irromper",
+            "participle": "irrompido",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "lastimar",
+            "participle": "lastimado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "magoar",
+            "participle": "magoado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "malucar",
+            "participle": "malucado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "nublar",
+            "participle": "nublado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "obsequiar",
+            "participle": "obsequiado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "orgulhar",
+            "participle": "orgulhado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "penitenciar",
+            "participle": "penitenciado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "perrengar",
+            "participle": "perrengado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "perturbar",
+            "participle": "perturbado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "pirraçar",
+            "participle": "pirraçado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "preferir",
+            "participle": "preferido",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "preocupar",
+            "participle": "preocupado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "rebaixar",
+            "participle": "rebaixado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "simpatizar",
+            "participle": "simpatizado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "sossegar",
+            "participle": "sossegado",
+            "entity": "verb",
+            "value": 1
+        },
+        {
+            "text": "temer",
+            "participle": "temido",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "torturar",
+            "participle": "torturado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "venerar",
+            "participle": "venerado",
+            "entity": "verb",
+            "value": -1
+        },
+        {
+            "text": "zangar",
+            "participle": "zangado",
+            "entity": "verb",
+            "value": -1
+        }
+    ],
+    "adjectives": [
+        {
+            "text": "agradável",
+            "female": null,
+            "value": 1
+        },
+        {
+            "text": "alegre",
+            "female": null,
+            "value": 1
+        },
+        {
+            "text": "aliviado",
+            "female": "aliviada",
+            "value": 1
+        },
+        {
+            "text": "amigável",
+            "female": null,
+            "value": 1
+        },
+        {
+            "text": "animado",
+            "female": "animada",
+            "value": 1
+        },
+        {
+            "text": "animador",
+            "female": null,
+            "value": 1
+        },
+        {
+            "text": "ansioso",
+            "female": "ansiosa",
+            "value": 1
+        },
+        {
+            "text": "bem sucedido",
+            "female": "bem sucedida",
+            "value": 1
+        },
+        {
+            "text": "bobo",
+            "female": "boba",
+            "value": 1
+        },
+        {
+            "text": "bom",
+            "female": null,
+            "value": 1
+        },
+        {
+            "text": "calmo",
+            "female": "calma",
+            "value": 1
+        },
+        {
+            "text": "confortável",
+            "female": null,
+            "value": 1
+        },
+        {
+            "text": "cooperativo",
+            "female": "cooperativa",
+            "value": 1
+        },
+        {
+            "text": "corajoso",
+            "female": "corajosa",
+            "value": 1
+        },
+        {
+            "text": "delicioso",
+            "female": "deliciosa",
+            "value": 1
+        },
+        {
+            "text": "determinado",
+            "female": "determinada",
+            "value": 1
+        },
+        {
+            "text": "divertido",
+            "female": "divertida",
+            "value": 1
+        },
+        {
+            "text": "encantador",
+            "female": null,
+            "value": 1
+        },
+        {
+            "text": "engraçado",
+            "female": "engraçada",
+            "value": 1
+        },
+        {
+            "text": "entusiasta",
+            "female": null,
+            "value": 1
+        },
+        {
+            "text": "enérgico",
+            "female": "enérgica",
+            "value": 1
+        },
+        {
+            "text": "espirituoso",
+            "female": "espirituosa",
+            "value": 1
+        },
+        {
+            "text": "esplêndido",
+            "female": "esplêndida",
+            "value": 1
+        },
+        {
+            "text": "eufórico",
+            "female": "eufórica",
+            "value": 1
+        },
+        {
+            "text": "exuberante",
+            "female": null,
+            "value": 1
+        },
+        {
+            "text": "fantástico",
+            "female": "fantástica",
+            "value": 1
+        },
+        {
+            "text": "feira",
+            "female": null,
+            "value": 1
+        },
+        {
+            "text": "feliz",
+            "female": null,
+            "value": 1
+        },
+        {
+            "text": "fiel",
+            "female": null,
+            "value": 1
+        },
+        {
+            "text": "glorioso",
+            "female": "gloriosa",
+            "value": 1
+        },
+        {
+            "text": "grato",
+            "female": "grata",
+            "value": 1
+        },
+        {
+            "text": "hilário",
+            "female": "hilária",
+            "value": 1
+        },
+        {
+            "text": "legal",
+            "female": null,
+            "value": 1
+        },
+        {
+            "text": "maravilhoso",
+            "female": "maravilhosa",
+            "value": 1
+        },
+        {
+            "text": "multa",
+            "female": null,
+            "value": 1
+        },
+        {
+            "text": "obediente",
+            "female": null,
+            "value": 1
+        },
+        {
+            "text": "orgulhoso",
+            "female": "orgulhosa",
+            "value": 1
+        },
+        {
+            "text": "pensativo",
+            "female": "pensativa",
+            "value": 1
+        },
+        {
+            "text": "perfeito",
+            "female": "perfeita",
+            "value": 1
+        },
+        {
+            "text": "saudável",
+            "female": null,
+            "value": 1
+        },
+        {
+            "text": "sorridente",
+            "female": null,
+            "value": 1
+        },
+        {
+            "text": "sortudo",
+            "female": "sortuda",
+            "value": 1
+        },
+        {
+            "text": "suave",
+            "female": null,
+            "value": 1
+        },
+        {
+            "text": "tipo",
+            "female": "tipa",
+            "value": 1
+        },
+        {
+            "text": "vitorioso",
+            "female": "vitoriosa",
+            "value": 1
+        },
+        {
+            "text": "vivaz",
+            "female": null,
+            "value": 1
+        },
+        {
+            "text": "zeloso",
+            "female": "zelosa",
+            "value": 1
+        },
+        {
+            "text": "útil",
+            "female": null,
+            "value": 1
+        },
+        {
+            "text": "aborrecido",
+            "female": "aborrecida",
+            "value": -1
+        },
+        {
+            "text": "amalucado",
+            "female": "amalucada",
+            "value": -1
+        },
+        {
+            "text": "amuado",
+            "female": "amuada",
+            "value": -1
+        },
+        {
+            "text": "ansioso",
+            "female": "ansiosa",
+            "value": -1
+        },
+        {
+            "text": "apavorado",
+            "female": "apavorada",
+            "value": -1
+        },
+        {
+            "text": "arrepiante",
+            "female": null,
+            "value": -1
+        },
+        {
+            "text": "arrogante",
+            "female": null,
+            "value": -1
+        },
+        {
+            "text": "assustado",
+            "female": "assustada",
+            "value": -1
+        },
+        {
+            "text": "assustador",
+            "female": null,
+            "value": -1
+        },
+        {
+            "text": "aturdido",
+            "female": "aturdida",
+            "value": -1
+        },
+        {
+            "text": "azul",
+            "female": null,
+            "value": -1
+        },
+        {
+            "text": "cansado",
+            "female": "cansada",
+            "value": -1
+        },
+        {
+            "text": "cansado",
+            "female": "cansada",
+            "value": -1
+        },
+        {
+            "text": "chateado",
+            "female": "chateada",
+            "value": -1
+        },
+        {
+            "text": "ciumento",
+            "female": "ciumenta",
+            "value": -1
+        },
+        {
+            "text": "com raiva",
+            "female": null,
+            "value": -1
+        },
+        {
+            "text": "combativo",
+            "female": "combativa",
+            "value": -1
+        },
+        {
+            "text": "condenado",
+            "female": "condenada",
+            "value": -1
+        },
+        {
+            "text": "confuso",
+            "female": "confusa",
+            "value": -1
+        },
+        {
+            "text": "cruel",
+            "female": null,
+            "value": -1
+        },
+        {
+            "text": "deprimido",
+            "female": "deprimida",
+            "value": -1
+        },
+        {
+            "text": "derrotado",
+            "female": "derrotada",
+            "value": -1
+        },
+        {
+            "text": "desafiador",
+            "female": null,
+            "value": -1
+        },
+        {
+            "text": "desagradável",
+            "female": null,
+            "value": -1
+        },
+        {
+            "text": "desajeitado",
+            "female": "desajeitada",
+            "value": -1
+        },
+        {
+            "text": "desamparado",
+            "female": "desamparada",
+            "value": -1
+        },
+        {
+            "text": "desgostoso",
+            "female": "desgostosa",
+            "value": -1
+        },
+        {
+            "text": "desobediente",
+            "female": null,
+            "value": -1
+        },
+        {
+            "text": "doente",
+            "female": null,
+            "value": -1
+        },
+        {
+            "text": "doer",
+            "female": null,
+            "value": -1
+        },
+        {
+            "text": "dolorido",
+            "female": "dolorida",
+            "value": -1
+        },
+        {
+            "text": "egoísta",
+            "female": null,
+            "value": -1
+        },
+        {
+            "text": "entediado",
+            "female": "entediada",
+            "value": -1
+        },
+        {
+            "text": "envergonhado",
+            "female": "envergonhada",
+            "value": -1
+        },
+        {
+            "text": "faminto",
+            "female": "faminta",
+            "value": -1
+        },
+        {
+            "text": "feroz",
+            "female": null,
+            "value": -1
+        },
+        {
+            "text": "frenético",
+            "female": "frenética",
+            "value": -1
+        },
+        {
+            "text": "invejoso",
+            "female": "invejosa",
+            "value": -1
+        },
+        {
+            "text": "irrefletido",
+            "female": "irrefletida",
+            "value": -1
+        },
+        {
+            "text": "irritado",
+            "female": "irritada",
+            "value": -1
+        },
+        {
+            "text": "irritável",
+            "female": null,
+            "value": -1
+        },
+        {
+            "text": "louco",
+            "female": "louca",
+            "value": -1
+        },
+        {
+            "text": "luto",
+            "female": "luta",
+            "value": -1
+        },
+        {
+            "text": "mal",
+            "female": null,
+            "value": -1
+        },
+        {
+            "text": "misterioso",
+            "female": "misteriosa",
+            "value": -1
+        },
+        {
+            "text": "nervoso",
+            "female": "nervosa",
+            "value": -1
+        },
+        {
+            "text": "nervoso",
+            "female": "nervosa",
+            "value": -1
+        },
+        {
+            "text": "nervoso",
+            "female": "nervosa",
+            "value": -1
+        },
+        {
+            "text": "perigoso",
+            "female": "perigosa",
+            "value": -1
+        },
+        {
+            "text": "perturbado",
+            "female": "perturbada",
+            "value": -1
+        },
+        {
+            "text": "perverso",
+            "female": "perversa",
+            "value": -1
+        },
+        {
+            "text": "preguiçoso",
+            "female": "preguiçosa",
+            "value": -1
+        },
+        {
+            "text": "preocupado",
+            "female": "preocupada",
+            "value": -1
+        },
+        {
+            "text": "preto",
+            "female": "preta",
+            "value": -1
+        },
+        {
+            "text": "repugnante",
+            "female": null,
+            "value": -1
+        },
+        {
+            "text": "ruim",
+            "female": null,
+            "value": -1
+        },
+        {
+            "text": "sarnento",
+            "female": "sarnenta",
+            "value": -1
+        },
+        {
+            "text": "sem casa",
+            "female": null,
+            "value": -1
+        },
+        {
+            "text": "solitário",
+            "female": "solitária",
+            "value": -1
+        },
+        {
+            "text": "tenso",
+            "female": "tensa",
+            "value": -1
+        },
+        {
+            "text": "terrível",
+            "female": null,
+            "value": -1
+        },
+        {
+            "text": "terrível",
+            "female": null,
+            "value": -1
+        },
+        {
+            "text": "tolo",
+            "female": "tola",
+            "value": -1
+        },
+        {
+            "text": "tonto",
+            "female": "tonta",
+            "value": -1
+        },
+        {
+            "text": "ultrajante",
+            "female": null,
+            "value": -1
+        },
+        {
+            "text": "vergonha",
+            "female": null,
+            "value": -1
+        }
+    ]
+}

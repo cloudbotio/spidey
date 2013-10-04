@@ -1,0 +1,31 @@
+{
+
+	"buscape": {
+		"api_url": "http://sandbox.buscape.com/service/findProductList/4e616761796b58732b77383d/?format=json&keyword=%s"
+	},
+
+	"mercadolivre": {
+		"search_url": "https://api.mercadolibre.com/sites/MLB/search?q=%s",
+		"user_url": "https://api.mercadolibre.com/users/%s"
+	},
+
+	"submarino": {
+		"search_url": "http://busca.submarino.com.br/busca.php?q=%s"
+	},
+
+	"twitter": {
+
+		"access_token": "52923900-I7H9poStvkipdTQN9QEIcPF2nRRkeuc21EyAPtIJ8",
+		"access_secret": "TEwOagtT1231emk9b4CgVy4xZWxkIZEhUpnXa915U",
+		"consumer_key": "HfovZ6PATJ2kGWhc0LiKpA",
+		"consumer_secret": "d7UlNXGxjVADhIH4bhelGeZkzk6SrIpUJzF6jsVDA",
+
+		"request_token_url": "https://api.twitter.com/oauth/request_token",
+		"authorize_url": "https://api.twitter.com/oauth/authorize",
+		"access_token_url": "https://api.twitter.com/oauth/access_token"
+	},
+
+	"mashape": {
+		"testing_key": "b4eSyFiWfEg4vk7rTz6oIFg1YkhZT77B"
+	}
+}
