@@ -58,12 +58,14 @@ module.exports = {
 		db: {
 		
 			protocol: "mongodb://",
+			
 
-			user: "root",
-			password: "",
+			user: "heroku",
+			password: "heroku",
 
-			db: "main",
-			host: "localhost"
+			db: "app18488358",
+			host: "paulo.mongohq.com",
+			port: 10004
 		},
 		
 		workers: 1,
