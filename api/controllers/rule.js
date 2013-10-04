@@ -65,25 +65,50 @@ module.exports = {
 				
 				if(!rule)
 					throw new Error("No rule defined");
-
-				workerStorage.getLastAnalysis(req.param("rule"), function(docs){
+				
+				model.find("rule", {
 					
-					if(docs && docs.length) {
-						response(res).json({
-							result: "success",
-							message: "Last analysis report for the specified rule",
-							data: docs[0].sanitize(docs[0])
-						});
-					}
-					else {
+					_id: req.param("rule"),
+					owner: req.cookies.user_id
+					
+				}, function(docs) {
+					
+					try {
+						if(!docs || !docs.length)
+							throw new Error("The specified rule could not be accessed. "+
+								"Please make sure you're the owner and the rule id is correct");
 						
+						rule = docs[0];
+						
+						workerStorage.getLatestAnalysis(rule._id, function(docs){
+							
+							if(docs && docs.length) {
+								response(res).json({
+									result: "success",
+									message: "Last analysis report for the specified rule",
+									data: docs[0].sanitize(docs[0])
+								});
+							}
+							else {
+								
+								response(res).json({
+									result: "error",
+									message: "The rule is invalid or could not be analysed yet",
+									code: 500
+								});
+							}
+						})
+					}
+					
+					catch(e) {
+			
 						response(res).json({
 							result: "error",
-							message: "The rule is invalid or could not be analysed yet",
-							code: 500
+							message: e.message.toString()
 						});
+			
+						return;
 					}
-					
 				});
 			})
 		}

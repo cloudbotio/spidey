@@ -27,7 +27,7 @@ var Manager = function() {
 		
 	}; exports.addItem = addItem;
 	
-	var getLastAnalysis = function(serie, cb) {
+	var getLatestAnalysis = function(serie, cb) {
 		
 		return model.find("timeserie", {
 			
@@ -36,7 +36,7 @@ var Manager = function() {
 			
 		}, cb);
 		
-	}; exports.getLastAnalysis = getLastAnalysis;
+	}; exports.getLatestAnalysis = getLatestAnalysis;
 	
 	var getItems = function(serie, rest, cb) {
 		
