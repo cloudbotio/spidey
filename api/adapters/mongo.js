@@ -17,7 +17,7 @@ var Mongo = function(config) {
 			str = str + ":" + config.password;
 		}
 
-		str = str + "@" + config.host + ":" + (config.port || "" + DEFAULT_PORT);
+		str = str + "@" + config.host + ":" + (config.port || DEFAULT_PORT);
 		str = str + "/" + config.db;
 		return str;
 	}
@@ -26,7 +26,7 @@ var Mongo = function(config) {
 
 		cb = cb || function(){};
 
-		var db = mongojs("mongodb://root@localhost:27017/main", [collection]);
+		var db = mongojs(connection_string(), [collection]);
 
 		if(!db[collection])
 			throw new Error("Could not connect to collection '"+collection+"'");

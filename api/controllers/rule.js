@@ -85,7 +85,7 @@ module.exports = {
 							if(docs && docs.length) {
 								response(res).json({
 									result: "success",
-									message: "Last analysis report for the specified rule",
+									message: "Lastest analysis report for the specified rule",
 									data: docs[0].sanitize(docs[0])
 								});
 							}
