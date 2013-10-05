@@ -173,7 +173,7 @@ module.exports = {
 								
 								response(res).json({
 									result: "success",
-									message: "Lastest analysis report for the specified rule",
+									message: "Latest analysis reports for the specified rule",
 									data: {
 										values: docs
 									}

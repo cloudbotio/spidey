@@ -55,7 +55,7 @@ module.exports = {
 		defaultTo: "user"
 	},
 
-	_sanitize: function(_this) {
+	sanitize: function(_this) {
 
 		if(_this.password)
 			delete _this.password;
