@@ -10,7 +10,7 @@ var Bundle = function(name, task) {
 			exports = require("./" + name);
 		}
 		catch(e){		
-			throw new Error(lang.bundle.invalid || "Invalid or incorrect bundle name.");
+			throw new Error(lang.bundle.invalid + " " + e.message|| "Invalid or incorrect bundle name.");
 		}
 	}
 	

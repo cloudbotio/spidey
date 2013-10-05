@@ -11,6 +11,7 @@ module.exports = {
     buscape: "ecommerce/buscape",
     mercadolivre: "ecommerce/mercadolivre",
 	submarino: "ecommerce/submarino",
+    americanas: "ecommerce/americanas",
     
     // website bundles
     scrapper: "scrapper",

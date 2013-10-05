@@ -12,6 +12,10 @@
 	"submarino": {
 		"search_url": "http://busca.submarino.com.br/busca.php?q=%s"
 	},
+    
+    "americanas": {
+        "search_url": "http://busca.americanas.com.br/busca.php?q=%s"
+    },
 
 	"twitter": {
 
