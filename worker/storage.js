@@ -32,11 +32,39 @@ var Manager = function() {
 		return model.find("timeserie", {
 			
 			rule: serie,
-			limit: 1
+			limit: 1,
+			
+			sort: {
+				time: -1
+			},
 			
 		}, cb);
 		
 	}; exports.getLatestAnalysis = getLatestAnalysis;
+	
+	var getTimeSpan = function(serie, rest, cb) {
+		
+		var time_restriction = {}
+		time_restriction["$lt"] = rest.max;
+		time_restriction["$gt"] = rest.min;
+		
+		if(!time_restriction["$lt"] || !time_restriction["$lt"])
+			throw new Error("Timespan restriction not defined. " + 
+				"Don't forget to specify both max and min time values.");
+			
+		return model.find("timeserie", {
+			
+			rule: serie,
+			time: time_restriction,
+			limit: 10,
+			
+			sort: {
+				time: -1
+			},
+			
+		}, cb);
+		
+	}; exports.getTimeSpan = getTimeSpan;
 	
 	var getItems = function(serie, rest, cb) {
 		

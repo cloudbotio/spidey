@@ -18,8 +18,11 @@ module.exports = {
 		"/api/user/signup": "user/signup",
 		"/api/user/login": "user/login",
 		"/api/user/logout": "user/logout",
+		"/api/user/rules": "user/rules",
 		
-		"/api/rule": "rule/get",
+		"/api/rule/get": "rule/get",
+		"/api/rule": "rule/span",
+		"/api/rule/span": "rule/span",
 
 		"/test/get": "test/get"
 	},
@@ -31,6 +34,8 @@ module.exports = {
 		
 		// api
 		"/api/rule/create": "rule/create",
+		"/api/rule": "rule/get",
+		"/api/rule/get": "rule/get",		
 		
 		"/test/post": "test/post"
 	},

@@ -157,5 +157,30 @@ module.exports = {
 				message: lang.user.logout_success || "user successfully logged out"
 			})
 		});
+	},
+	
+	rules: function(req, res) {
+		
+		policy(req, res).check("authenticated", function() {
+			
+			model.find("rule", {
+				
+				owner: req.cookies.user_id,
+				
+			}, function(docs) {
+				
+				for(var i = 0;  i < docs.length; i++)
+					docs[i].sanitize(docs[i]);				
+				
+				response(res).json({
+					result: "success",
+					message: "Rules successfully retrieved!",
+					data: {
+						rules: docs
+					}
+				})
+			});
+
+		});
 	}
 }
