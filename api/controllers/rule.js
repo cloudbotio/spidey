@@ -1,6 +1,7 @@
 var response = require("../adapters/response");
 var model = require("../adapters/model");
 var policy = require("../policies/");
+var interval = require("interval");
 
 var lang = require("../../language").getDefault();
 
@@ -137,6 +138,9 @@ module.exports = {
 				if(!rule)
 					throw new Error("No rule defined");
 				
+				if(!req.param("time"))
+					throw new Error("No time restriction defined");
+				
 				model.find("rule", {
 					
 					_id: req.param("rule") || req.param("id"),
@@ -151,12 +155,16 @@ module.exports = {
 						
 						rule = docs[0];
 						
-						workerStorage.getTimeSpan(rule._id, {
-							
-							max: parseInt(req.param("max")),
-							min: parseInt(req.param("min"))
-							
-						}, function(docs){
+						var timespan = {};
+						var rest = req.param("time").split(" ");
+						
+						timespan.max = (new Date()).getTime();
+						timespan.min = {};
+						timespan.min[rest[1]] = parseInt(rest[0]);
+						
+						timespan.min = interval.subtract(new Date(), timespan.min).getTime()
+						
+						workerStorage.getTimeSpan(rule._id, timespan, function(docs){
 							
 							if(docs && docs.length) {
 								

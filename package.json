@@ -34,7 +34,8 @@
     "hoard": "~0.1.5",
     "moment": "~2.2.1",
     "natural": "~0.1.22",
-    "classifier": "~0.1.0"
+    "classifier": "~0.1.0",
+    "interval": "0.0.8"
   },
   "devDependencies": {
     "nodeunit": "~0.8.1"
