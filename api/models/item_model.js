@@ -22,7 +22,7 @@ module.exports = {
 	pubDate: {
 
 		required: true,
-		type: "integer",
+		type: "string",
 		defaultTo: function(){
 			return new Date().toISOString()
 		}

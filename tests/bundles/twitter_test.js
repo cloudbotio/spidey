@@ -1,8 +1,8 @@
 var Bundle = require("../../worker/bundles/bundle");
 
-exports.test_simpleSubmarino = function(test){
+exports.test_simpleTwitter = function(test){
 
-    var bundle = new Bundle("ecommerce/submarino", {
+    var bundle = new Bundle("social/twitter", {
 		q: "smartphone"
 	});
 
