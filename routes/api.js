@@ -8,8 +8,13 @@ module.exports = {
 	"get": {
 
 		// views
-		"/": "dashboard",
 		"/login": "login",
+		"/": "dashboard",
+		"/rules": "dashboard/rules",
+		"/rules/resume": "dashboard/rule_resume",
+		"/rules/create": "dashboard/rule_create",
+		"/pipelines": "dashboard/pipelines",
+		"/settings": "dashboard/settings",
 
 		// api
 		"/api/user": "user",
@@ -21,8 +26,8 @@ module.exports = {
 		"/api/rule/get": "rule/get",
 		"/api/rule": "rule/span",
 		"/api/rule/span": "rule/span",
-
-		"/test/get": "test/get"
+				
+		"/api/test/get": "test/get"
 	},
 
 	/*

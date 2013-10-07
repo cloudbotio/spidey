@@ -1,0 +1,131 @@
+<!-- Site header -->
+<header class="main-header">
+	
+	<!-- Page title -->
+	<h3>
+		<a id="show-menu" href="#" class="btn btn-primary"><i class="icon-reorder"></i></a>
+		<%- title.toUpperCase() || "DASHBOARD" %>
+	</h3>
+	
+	<!-- Profile dropdown -->
+	<nav class="user-profile">
+		<a href="#" class="user-dropdown" data-toggle="dropdown">
+			<i class="icon-user"></i>
+			<span><%- user.name %></span>
+			<i class="icon-caret-down"></i>
+		</a>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="#">Profile</a></li>
+			<li><a href="#">Messages</a></li>
+			<li><a href="#">Tasks</a></li>
+			<li><a href="error.html">Show error</a></li>
+			<li><a data-module="user" data-method="logout">Logout</a></li>
+		</ul>
+	</nav>
+
+</header>
+
+<section class="main-content padding">
+
+	<div class="row">
+					
+		<!-- Basic forms -->
+		<div class="col-lg-12">
+			<div class="module">
+				<div class="module-header"><h4>BASIC INFORMATION</h4></div>
+				<div class="module-content">
+
+					<form action="#" class="form-horizontal">
+
+						<div class="form-group">
+							<label for="input1" class="col-lg-2 control-label">ID</label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" value="<%= rule._id %>" readonly>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="input2" class="col-lg-2 control-label">Bundle</label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" value="<%= rule.source.bundle %>" readonly>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="input3" class="col-lg-2 control-label">Query</label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" value="<%= rule.source.q || 'null' %>" readonly>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="input4" class="col-lg-2 control-label">URL</label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" value="<%= rule.source.url || 'null' %>" readonly>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="input4" class="col-lg-2 control-label">Steps</label>
+							<div class="col-lg-10">
+								
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>Pipeline</th>
+											<th>Method</th>
+											<th>Input</th>
+										</tr>
+									</thead>
+									<tbody>
+										<% var pipes = rule.tunnel.steps; %>
+										<% for(var i = 0; i < pipes.length; i++) { %>
+											<tr>
+												<td><%= pipes[i].pipeline %></td>
+												<td><%= pipes[i].method %></td>
+												<td><%= JSON.stringify(pipes[i].input || {}) %></td>
+											</tr>
+										<% } %>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+					</form>
+
+				</div>
+			</div>
+		</div>
+		<!-- /Basic forms -->
+	</div>
+	
+	<!-- Graphs -->
+	<div class="row">
+
+		<div class="col-lg-12">
+
+			<div class="module">
+				<div class="module-header"><h4>STATISTICS</h4></div>
+				<div class="module-content">
+
+					<h4 class="module-subtitle"><span>Latest Results</span></h4>
+
+					<div id="chart1" class="chart" data-graph="<%= rule._id %>" data-type="resume" data-time="3 days ago"></div>
+
+<!--
+					<h4 class="module-subtitle"><span>This week</span></h4>
+
+					<div id="chart2" class="chart"></div>
+-->
+
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	<!-- /Graphs -->
+	
+	<input type="hidden" data-on="ready" data-module="rule" data-method="plot_resume">
+
+</section>

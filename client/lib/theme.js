@@ -131,63 +131,63 @@ $('#calendar').fullCalendar({
 /* =================================
    2 Morris charts
    ================================= */
-new Morris.Area({
-	element: 'chart1',
-	data: [
-		{ year: '2001', x: 120, y: 27, z: 25 },
-		{ year: '2002', x: 88, y: 46, z: 17 },
-		{ year: '2003', x: 132, y: 25, z: 66 },
-		{ year: '2004', x: 120, y: 33, z: 20 },
-		{ year: '2005', x: 55, y: 50, z: 44 },
-		{ year: '2006', x: 122, y: 27, z: 25 },
-		{ year: '2007', x: 53, y: 120, z: 17 },
-		{ year: '2008', x: 183, y: 25, z: 14 },
-		{ year: '2009', x: 100, y: 33, z: 20 },
-		{ year: '2010', x: 46, y: 50, z: 20 },
-		{ year: '2011', x: 124, y: 25, z: 14 },
-		{ year: '2012', x: 44, y: 33, z: 20 },
-		{ year: '2013', x: 46, y: 50, z: 44 },
-		{ year: '2014', x: 123, y: 27, z: 25 },
-		{ year: '2015', x: 53, y: 46, z: 66 },
-		{ year: '2016', x: 34, y: 25, z: 14 },
-		{ year: '2017', x: 120, y: 27, z: 25 },
-		{ year: '2018', x: 88, y: 46, z: 17 },
-		{ year: '2019', x: 132, y: 25, z: 66 },
-		{ year: '2020', x: 120, y: 33, z: 20 },
-		{ year: '2021', x: 55, y: 50, z: 44 },
-		{ year: '2022', x: 122, y: 27, z: 25 }
-	],
-	xkey: 'year',
-	lineWidth: 0,
-	grid: false,
-	pointSize: 0,
-	ykeys: ['x', 'y', 'z'],
-	labels: ['Visits', 'Hits', 'Views'],
-	behaveLikeLine: true,
-	fillOpacity: 1,
-	lineColors: ['#ffce55', '#379ca8', '#ee6969']
-});
-
-new Morris.Bar({
-	element: 'chart2',
-	data: [
-		{ year: '2001', y: 27, z: 25 },
-		{ year: '2002', y: 46, z: 17 },
-		{ year: '2003', y: 25, z: 14 },
-		{ year: '2004', y: 33, z: 20 },
-		{ year: '2005', y: 50, z: 44 },
-		{ year: '2006', y: 27, z: 25 },
-		{ year: '2007', y: 46, z: 17 },
-		{ year: '2008', y: 25, z: 14 },
-		{ year: '2009', y: 33, z: 20 },
-		{ year: '2010', y: 50, z: 44 }
-	],
-	xkey: 'year',
-	grid: false,
-	ykeys: ['y', 'z'],
-	labels: ['Uptime', 'Downtime'],
-	barColors: ['#6dba89', '#ed5564']
-});
+//new Morris.Area({
+//	element: 'chart1',
+//	data: [
+//		{ year: '2001', x: 120, y: 27, z: 25 },
+//		{ year: '2002', x: 88, y: 46, z: 17 },
+//		{ year: '2003', x: 132, y: 25, z: 66 },
+//		{ year: '2004', x: 120, y: 33, z: 20 },
+//		{ year: '2005', x: 55, y: 50, z: 44 },
+//		{ year: '2006', x: 122, y: 27, z: 25 },
+//		{ year: '2007', x: 53, y: 120, z: 17 },
+//		{ year: '2008', x: 183, y: 25, z: 14 },
+//		{ year: '2009', x: 100, y: 33, z: 20 },
+//		{ year: '2010', x: 46, y: 50, z: 20 },
+//		{ year: '2011', x: 124, y: 25, z: 14 },
+//		{ year: '2012', x: 44, y: 33, z: 20 },
+//		{ year: '2013', x: 46, y: 50, z: 44 },
+//		{ year: '2014', x: 123, y: 27, z: 25 },
+//		{ year: '2015', x: 53, y: 46, z: 66 },
+//		{ year: '2016', x: 34, y: 25, z: 14 },
+//		{ year: '2017', x: 120, y: 27, z: 25 },
+//		{ year: '2018', x: 88, y: 46, z: 17 },
+//		{ year: '2019', x: 132, y: 25, z: 66 },
+//		{ year: '2020', x: 120, y: 33, z: 20 },
+//		{ year: '2021', x: 55, y: 50, z: 44 },
+//		{ year: '2022', x: 122, y: 27, z: 25 }
+//	],
+//	xkey: 'year',
+//	lineWidth: 0,
+//	grid: false,
+//	pointSize: 0,
+//	ykeys: ['x', 'y', 'z'],
+//	labels: ['Visits', 'Hits', 'Views'],
+//	behaveLikeLine: true,
+//	fillOpacity: 1,
+//	lineColors: ['#ffce55', '#379ca8', '#ee6969']
+//});
+//
+//new Morris.Bar({
+//	element: 'chart2',
+//	data: [
+//		{ year: '2001', y: 27, z: 25 },
+//		{ year: '2002', y: 46, z: 17 },
+//		{ year: '2003', y: 25, z: 14 },
+//		{ year: '2004', y: 33, z: 20 },
+//		{ year: '2005', y: 50, z: 44 },
+//		{ year: '2006', y: 27, z: 25 },
+//		{ year: '2007', y: 46, z: 17 },
+//		{ year: '2008', y: 25, z: 14 },
+//		{ year: '2009', y: 33, z: 20 },
+//		{ year: '2010', y: 50, z: 44 }
+//	],
+//	xkey: 'year',
+//	grid: false,
+//	ykeys: ['y', 'z'],
+//	labels: ['Uptime', 'Downtime'],
+//	barColors: ['#6dba89', '#ed5564']
+//});
 
 /* End scripts */
 });

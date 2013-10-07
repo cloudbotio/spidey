@@ -1,3 +1,30 @@
+<!-- Site header -->
+<header class="main-header">
+	
+	<!-- Page title -->
+	<h3>
+		<a id="show-menu" href="#" class="btn btn-primary"><i class="icon-reorder"></i></a>
+		<%- title.toUpperCase() || "DASHBOARD" %>
+	</h3>
+	
+	<!-- Profile dropdown -->
+	<nav class="user-profile">
+		<a href="#" class="user-dropdown" data-toggle="dropdown">
+			<i class="icon-user"></i>
+			<span><%- user.name %></span>
+			<i class="icon-caret-down"></i>
+		</a>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="#">Profile</a></li>
+			<li><a href="#">Messages</a></li>
+			<li><a href="#">Tasks</a></li>
+			<li><a href="error.html">Show error</a></li>
+			<li><a data-module="user" data-method="logout">Logout</a></li>
+		</ul>
+	</nav>
+
+</header>
+
 <!-- Main Content -->
 <section class="main-content padding">
 

@@ -72,7 +72,7 @@ var Manager = function() {
 		
 	}; exports.getItems = getItems;
 	
-	var init = function(){
+	var init = function() {
 		return exports;
 	}
 	

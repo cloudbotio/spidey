@@ -132,8 +132,7 @@ module.exports = {
 			
 			try {
 				
-				var rule = req.param("rule") || req.param("rule_id") ||
-					req.param("serie") || false;
+				var rule = req.param("rule") || req.param("id") || false;
 				
 				if(!rule)
 					throw new Error("No rule defined");
