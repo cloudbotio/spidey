@@ -5,7 +5,6 @@ module.exports = {
     twitter: "social/twitter",
     linkedin: "social/linkedin",
     instagram: "social/instagram",
-    wine: "social/wine",
     
     // ecommerce bundles
     buscape: "ecommerce/buscape",

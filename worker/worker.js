@@ -49,9 +49,16 @@ var Worker = function(q, t){
 			
 			var _t = task;
 			
-			bundleInterpreter.get(task.source, function(items) {
-				analysis(items, _t);
-			});
+			try {
+			
+				bundleInterpreter.get(task.source, function(items) {
+					analysis(items, _t);
+				});
+			}
+			
+			catch(e) {
+				log.info("worker says: problem running bundle interpreter. ", e.message);
+			}
 		});
 
 	}; exports.work = work;

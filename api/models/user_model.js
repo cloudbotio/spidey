@@ -1,4 +1,5 @@
 var lang = require("../../language");
+var crypto = require("crypto");
 
 module.exports = {
 	
@@ -44,7 +45,11 @@ module.exports = {
 	access_token: {
 
 		required: true,
-		type: "string"
+		type: "string",
+		defaultTo: function() {
+			var buf = crypto.randomBytes(16);
+			return buf.toString('base64').replace(/\W/g, '');
+		}
 
 	},
 

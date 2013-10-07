@@ -476,6 +476,7 @@ var Model = function(type) {
 	var find = function(name, rest, cb) {
 
 		rest = rest || {};
+		var _name = name;
 
 		var m = require("../models/" + name + "_model");
 
@@ -508,6 +509,17 @@ var Model = function(type) {
 			delete rest.sort;
 			
 			return db.find(rest).limit(l).sort(s, function(err, docs){
+				
+				if(err) {
+					
+					db = mongo.connect(_name);
+					
+					db.find(rest).limit(l).sort(s, function(err, docs){
+						findCallback(err, docs, cb);
+					})
+					
+					return;
+				}
 				
 				findCallback(err, docs, cb);
 				

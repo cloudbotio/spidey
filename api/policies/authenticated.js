@@ -10,6 +10,25 @@ module.exports = function(req, res, ok) {
 
 		ok();
 	}
+	
+	else if (req.param("access_token")) {
+		
+		model.find("user", {
+			
+			access_token: req.param("access_token"),
+			
+		}, function(docs) {
+			
+			if(!docs || !docs.length)
+				response(res).json({
+					result: "error",
+					message: "access token supplied is not valid"
+				});
+			else
+				ok();			
+		});
+		
+	}
 
 	else {
 		response(res).json({

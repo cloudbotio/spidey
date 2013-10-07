@@ -47,12 +47,12 @@
 				if($("#destination").val())
 
 					// render destination controller
-					core.client.render($("#destination").val());
+					core.client.redirect($("#destination").val());
 
 				else
 
 					// render dashboard controller
-					core.client.render("dashboard");
+					core.client.redirect("/");
 
 			}).get()
 
@@ -67,11 +67,11 @@
 
 			}).success(function(){
 
-				core.client.render("/");
+				core.client.redirect("/");
 
 			}).error(function(){
 
-				core.client.render("/");
+				core.client.redirect("/");
 
 			}).get();
 
@@ -112,6 +112,132 @@
 			
 		}; exports.destroy = destroy;
 
+		return exports;
+	}
+	
+	window.graph_module = function(sandbox) {
+		
+		var exports = {};
+		
+		var plot = function(data) {
+			new Morris.Area(data);			
+		};
+		
+		var init = function(){
+			
+			core.log.info("initializing graph module...");
+			sandbox.broadcast.subscribe("graph/plot", plot);
+			return exports;
+			
+		}; exports.init = init;
+		
+		var destroy = function(){
+			
+			core.log.info("destroying graph module...")
+			
+		}; exports.destroy = destroy;
+		
+		return exports;
+	};
+	
+	window.rule_module = function(sandbox) {
+		
+		var exports = {};
+		
+		var parseResumeObject = function(obj) {
+			
+			var binding = {
+				price: {
+					x: "max",
+					y: "medium",
+					z: "min"
+				}
+			};
+			
+			var res = {
+				time: obj.time
+			};
+			
+			obj = obj.values;
+						
+			for(var k in obj) {
+				
+				if(binding[k]) {
+					
+					if(typeof binding[k] === typeof "str")
+						res[k] = obj[k];
+					
+					else if(typeof binding[k] === typeof {}) {
+						
+						for(var l in binding[k]) {
+							if(typeof binding[k][l] === typeof "str"
+							  && obj[k][binding[k][l]])
+								res[l] = obj[k][binding[k][l]];
+						}
+					}
+				}
+			}
+			
+			return res;			
+		}
+		
+		var plot_resume = function() {
+			
+			$("[data-graph][data-type='resume']").each(function(){
+				
+				var graph_id = $(this).attr("id");
+				
+				sandbox.api("rule/span")				
+					.data({
+						id: $(this).attr("data-graph"),
+						time: $(this).attr("data-time") || "3 days ago"
+					})
+					.success(function(response){
+					
+						if(response.result != "success") throw new Error(response.message);
+						
+						var val = [];
+						
+						for(var i = 0; i < response.data.values.length; i++)
+							val.push(parseResumeObject(response.data.values[i]));
+							
+						sandbox.broadcast.publish("graph/plot", {
+							element: graph_id,
+							data: val,
+							xkey: 'time',
+							lineWidth: 0,
+							grid: false,
+							pointSize: 0,
+							ykeys: ['x', 'y', 'z'],
+							labels: ['max', 'medium', 'min'],
+							behaveLikeLine: true,
+							fillOpacity: 1,
+							lineColors: ['#ffce55', '#379ca8', '#ee6969']
+						});
+					})
+					.error(function(response) {
+						
+						console.log(response);
+						
+					})
+					.get();
+			});
+			
+		}; exports.plot_resume = plot_resume;
+		
+		var init = function() {
+			
+			core.log.info("starting rule module...");
+			return exports;
+			
+		}; exports.init = init;
+		
+		var destroy = function(){
+			
+			core.log.info("destroying rule module...");
+			
+		}; exports.destroy = destroy;
+		
 		return exports;
 	}
 

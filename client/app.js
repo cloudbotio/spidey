@@ -18,7 +18,7 @@
 				port: 3000
 			},
 
-			modules: ["user"],
+			modules: ["user", "graph", "rule"],
 
 			// show info logs
 			log: true
@@ -32,7 +32,7 @@
 				port: 3000
 			},
 
-			modules: ["user"],
+			modules: ["user", "graph", "rule"],
 
 			// show info logs
 			log: true
@@ -46,7 +46,7 @@
 				port: 3000
 			},
 
-			modules: ["user", "error"]
+			modules: ["user", "graph", "rule", "error"]
 		}
 	}
 
@@ -65,154 +65,12 @@
 	//														//
 	//////////////////////////////////////////////////////////
 
-	var Client = function($, _) {
-
-		if(!clientConfig) {
-			throw new Error("No client configuration available...");
-		}
-
-		var exports = {};
-
-		var render = function(ctrl, data, cb) {
-
-			if(!ctrl || !ctrl.length)
-				throw new Error("No controller specified");
-
-			else if(ctrl.indexOf("javascript:") == 0)
-				return;
-
-			else if(ctrl[0] == "#") {
-
-				location.hash = ctrl;
-				return;
-			}
-
-			else if(ctrl == "/" || ctrl[0] == '/')
-				var uri = ctrl;
-			
-			else 
-				var uri = "/" + ctrl;
-
-			data = data || null;
-			cb = cb || function(){};
-
-			var tag = "[" + clientConfig.tags.container + "='controllers']";
-			var _ctrl = ctrl;
-
-			$(tag).parent().load(uri +" "+ tag, data, function(data){
-
-				bindings(tag);
-				history.pushState('', uri || _ctrl, uri);
-
-				sandbox.broadcast.publish("controller/ready");
-			})
-
-		}; exports.render = render;
-
-		var publish = function(event, data) {
-
-			$("[data-subscribe='"+event+"']").each(function(){
-
-				var action = $(this).attr("data-action") || "(function(){})();";
-				(new Function("data", "{ try {" + action + "} catch(e){ throw e; } }")).call(this, data || {});
-			});
-
-		}; exports.publish = publish;
-
-		var redirect = function(url) {
-
-			document.location.replace(url);
-
-		}; exports.redirect = redirect;
-
-		var bindings = function(tag){
-
-			$("a").each(function(){
-				if(!$(this).attr("href") || !$(this).attr("href").length)
-					$(this).attr("href", "javascript:;");
-			});
-
-			$(tag + " form[data-module][data-method]").on("submit", function(e){
-
-				e.preventDefault();
-				sandbox.broadcast.publish("module/call", {
-					module: $(this).attr("data-module"),
-					method: $(this).attr("data-method")
-				});
-			});
-
-			$(tag + " a[data-module][data-method]").on("click", function(e){
-
-				e.preventDefault();
-				sandbox.broadcast.publish("module/call", {
-					module: $(this).attr("data-module"),
-					method: $(this).attr("data-method")
-				});
-			});
-
-			$(tag + " a").on("click", function(e){
-
-				e.preventDefault();
-
-				if($(this).attr("data-module")
-					&& $(this).attr("data-method")) {
-					return false;
-				}
-
-				else
-					core.client.render($(this).attr("href"));
-
-				return false;
-			})
-
-			$("[data-event][data-on]").each(function(){
-
-				$(this).on($(this).attr("data-on") || "", function(e){
-
-					if(e && e.preventDefault) e.preventDefault();
-
-					var evt = $(this).attr("data-event");
-					var pub = $(this).attr("data-pub") || "return null";
-
-					pub = JSON.parse.call(this, pub);
-
-					window.sandbox.broadcast.publish(evt, pub);
-					return false;
-
-				});
-
-			});
-		}
-
-		var init = function(){
-
-			exports.util = _;
-
-			var tag = "[" + clientConfig.tags.container + "='controllers']";
-			bindings(tag);
-
-			$(window).on("hashchange", function(){
-				sandbox.broadcast.publish("hash/" + location.hash.replace("#", ""), { 
-					hash: location.hash 
-				});
-			});
-
-			exports = $.extend($, exports);
-
-			return exports;
-		}
-
-		return init();	
-	}
-
 	var Core = function(config) {
 
 		var exports = {
 
 			log: {},
-			config: config, 
-
-			client: new Client($, _)
+			config: config
 		};
 
 		// wrap logger
@@ -305,8 +163,8 @@
 
 				this.visitSubscribers('publish', publication, type);
 
-				if(core && core.client)
-					core.client.publish(type, publication);
+				if(app && app.client)
+					app.client.publish(type, publication);
 			},
 
 			visitSubscribers: function (action, arg, type) {
@@ -470,8 +328,8 @@
 
 		function init() {
 
-			if(location.hash) {
-				core.client.render(location.hash);
+			if(location.hash && app) {
+				app.client.render(location.hash);
 			};
 
 			core.log.info("sandbox initialized successfully...");
@@ -480,11 +338,189 @@
 
 		return init();	
 	};
+	
+	var Client = function($, _, broadcast) {
 
+		if(!clientConfig) {
+			throw new Error("No client configuration available...");
+		}
+
+		var exports = {};
+
+		var render = function(ctrl, data, cb) {
+
+			if(!ctrl || !ctrl.length)
+				throw new Error("No controller specified");
+
+			else if(ctrl.indexOf("javascript:") == 0)
+				return;
+
+			else if(ctrl[0] == "#") {
+
+				location.hash = ctrl;
+				return;
+			}
+			
+			else if(ctrl.indexOf("http") == 0) {
+				document.location.replace(ctrl)
+			}
+
+			else if(ctrl == "/" || ctrl[0] == '/')
+				var uri = ctrl;
+			
+			else 
+				var uri = "/" + ctrl;
+
+			data = data || null;
+			cb = cb || function(){};
+
+			var tag = "[" + clientConfig.tags.container + "='controllers']";
+			var _ctrl = ctrl;
+			
+			history.pushState('', uri || _ctrl, uri);
+
+			$(tag).parent().load(uri +" "+ tag, data, function(data){
+
+				bindings();
+				broadcast.publish("controller/ready");
+			})
+
+		}; exports.render = render;
+
+		var publish = function(event, data) {
+
+			$("[data-subscribe='"+event+"']").each(function(){
+
+				var action = $(this).attr("data-action") || "(function(){})();";
+				(new Function("data", "{ try {" + action + "} catch(e){ throw e; } }")).call(this, data || {});
+			});
+
+		}; exports.publish = publish;
+
+		var redirect = function(url) {
+
+			document.location.replace(url);
+
+		}; exports.redirect = redirect;
+		
+		var bindings = function(tag){
+
+			if(tag) tag = tag + " ";
+			else tag = "";
+			
+			$(tag + "a").each(function(){
+				if(!$(this).attr("href") || !$(this).attr("href").length)
+					$(this).attr("href", "javascript:;");
+			});
+
+			$(tag + "form[data-module][data-method]").on("submit", function(e){
+
+				e.preventDefault();
+				
+				broadcast.publish("module/call", {
+					module: $(this).attr("data-module"),
+					method: $(this).attr("data-method")
+				});
+				
+				e.stopImmediatePropagation();
+			});
+
+			$(tag + "a[data-module][data-method]").on("click", function(e){
+
+				e.preventDefault();
+				
+				broadcast.publish("module/call", {
+					module: $(this).attr("data-module"),
+					method: $(this).attr("data-method")
+				});
+				
+				e.stopImmediatePropagation();
+				return false;				
+			});
+
+			$(tag + "a").on("click", function(e){
+
+				e.preventDefault();
+
+				if($(this).attr("data-module")
+					&& $(this).attr("data-method")) {
+					return false;
+				}
+
+				else
+					app.client.render($(this).attr("href"));
+				
+				e.stopImmediatePropagation();
+				return false;
+			})
+
+			$(tag + "[data-event][data-on]").each(function(){
+					
+				$(this).on($(this).attr("data-on") || "", function(e){
+					
+					
+					if(e && e.preventDefault) e.preventDefault();
+					var evt = $(this).attr("data-event");
+					var pub = $(this).attr("data-pub") || $(this).attr("data-message") 
+						|| $(this).attr("data-msg") || "{}";
+	
+					pub = JSON.parse.call(this, pub);
+	
+					broadcast.publish(evt, pub);
+					
+					return false;
+				});
+			});
+				
+			$(tag + "[data-on][data-module][data-method]").each(function(e) {
+				
+				
+				if($(this).attr("data-on") == "ready") {
+					broadcast.publish("module/call", {
+						module: $(this).attr("data-module"),
+						method: $(this).attr("data-method")
+					});
+				}
+				else {
+					$(this).on($(this).attr("data-on") || "", function(e){
+		
+						broadcast.publish("module/call", {
+							module: $(this).attr("data-module"),
+							method: $(this).attr("data-method")
+						});
+						
+						e.preventDefault();
+						return false;
+		
+					});	
+				}
+			});
+		}
+
+		var init = function(){
+
+			exports.util = _;
+
+			var tag = "[" + clientConfig.tags.container + "='controllers']";
+			bindings();
+
+			$(window).on("hashchange", function(){
+				sandbox.broadcast.publish("hash/" + location.hash.replace("#", ""), { 
+					hash: location.hash 
+				});
+			});
+
+			exports = $.extend($, exports);
+
+			return exports;
+		}
+
+		return init();	
+	}
 
 	window.Application = function(sandbox) {
 
-		var exports = {};
+		var exports = {client: null};
 		var modules = {};
 		var queue = {};
 
@@ -556,6 +592,19 @@
 					m({}); 
 				}
 			});
+			
+			sandbox.broadcast.subscribe("client/render", function(data) {
+
+				if(!data.url)
+					throw new Error("No URL defined. The data-pub should be something like: '{\"url\": \"bla bla bla\"}'.");
+
+				else {
+
+					exports.client.render(data.url);
+				}
+			});
+			
+			exports.client = new Client($, _, sandbox.broadcast);
 
 			core.log.info("app initializing...")
 			sandbox.broadcast.publish("app/ready", {});
@@ -569,7 +618,6 @@
 
 	var config = appConfig[appConfig.state];
 	window.core = new Core(config);
-
 	window.sandbox = new Sandbox(core);
 
 })(window)
