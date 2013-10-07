@@ -8,9 +8,8 @@ module.exports = {
 	"get": {
 
 		// views
-		"/": "home",
-		"/login": "home/login",
-		"/dashboard": "home/dashboard",
+		"/": "dashboard",
+		"/login": "login",
 
 		// api
 		"/api/user": "user",

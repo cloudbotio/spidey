@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>KATO &dash; Admin Template</title>
+		<title>spidey &dash; <%- title || "Dashboard" %></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- Incude bootstrap -->
@@ -37,7 +37,7 @@
 					<li class="navigation-header">RULES</li>
 					<li><a href="/rules">My Rules</a></li>
 					<li><a href="/rules/create">Create a Rule</a></li>
-					<li><a href="/rules/create">Rules Marketplace</a></li>
+					<li><a href="/marketplace/rules">Marketplace</a></li>
 				</ul>
 
 				<ul class="sidebar-group tab-pane" id="tabstats">
@@ -49,16 +49,16 @@
 
 				<ul class="sidebar-group tab-pane" id="tabpipelines">
 					<li class="navigation-header">PIPELINES</li>
-					<li><a href="/pipeline">Available Pipelines</a></li>
-					<li><a href="/pipeline">Custom Pipelines</a></li>
-					<li><a href="/pipeline">Pipelines Marketplace</a></li>
+					<li><a href="/pipelines">Available Pipelines</a></li>
+					<li><a href="/pipelines/custom">Custom Pipelines</a></li>
+					<li><a href="/marketplace/pipelines">Marketplace</a></li>
 				</ul>
 				
 				<ul class="sidebar-group tab-pane" id="tabaccount">
 					<li class="navigation-header">MY ACCOUNT</li>
 					<li><a href="/settings">Settings</a></li>
-					<li><a href="/settings">Billing</a></li>
-					<li><a href="/pipeline">Performance</a></li>
+					<li><a href="/settings/billing">Billing</a></li>
+					<li><a href="/settings/performance">Performance</a></li>
 					<li><a data-module="user" data-method="logout">Logout</a></li>
 				</ul>
 
@@ -77,14 +77,14 @@
 				<!-- Page title -->
 				<h3>
 					<a id="show-menu" href="#" class="btn btn-primary"><i class="icon-reorder"></i></a>
-					DASHBOARD
+					<%- title.toUpperCase() || "DASHBOARD" %>
 				</h3>
 				
 				<!-- Profile dropdown -->
 				<nav class="user-profile">
 					<a href="#" class="user-dropdown" data-toggle="dropdown">
-						<img src="/assets/img/avatar.jpg" alt="avatar" />
-						<span>Adam Tate</span>
+						<i class="icon-user"></i>
+						<span><%- user.name %></span>
 						<i class="icon-caret-down"></i>
 					</a>
 					<ul class="dropdown-menu" role="menu">

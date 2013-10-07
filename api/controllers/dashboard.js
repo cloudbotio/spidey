@@ -5,26 +5,8 @@ var policy = require("../policies/");
 var lang = require("../../language").getDefault();
 
 module.exports = {
-
-	index: function(req, res) {
-		
-		policy(req, res).check(["logged_in"], function(){
-			response(res).view("home/index", {
-				title: lang.home.title,
-				message: lang.home.message
-			});
-		})
-	},
-
-	login: function(req, res) {
-
-		response(res).view("login/index", {
-			title: lang.home.title,
-			layout: false
-		});
-	},
 	
-	dashboard: function(req, res) {
+	index: function(req, res) {
 
 		policy(req, res).check(["logged_in"], function() { 
 		
@@ -39,13 +21,12 @@ module.exports = {
 
 				var u = results[0];
 
-				response(res).view("home/dashboard", {
+				response(res).view("dashboard/index", {
 
-					title: "node-web-cluster",
+					title: "Dashboard",
 					message: lang.home.message,
 					user: u
 				});
-
 			});
 		});		
 	}

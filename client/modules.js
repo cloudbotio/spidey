@@ -52,7 +52,7 @@
 				else
 
 					// render dashboard controller
-					core.client.redirect("/dashboard");
+					core.client.redirect("/");
 
 			}).get()
 
