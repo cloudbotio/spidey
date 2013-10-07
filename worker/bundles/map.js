@@ -20,7 +20,7 @@ module.exports = {
     // text file bundles
     rss: "text/rss",
     html: "scrapper",
-    xml: "text/xml",
+    xml: "standard/xml",
     pdf: "text/pdf",
     doc: "text/doc",  
     json: "standard/json",
