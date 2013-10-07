@@ -10,7 +10,6 @@ module.exports = {
 		// views
 		"/": "home",
 		"/login": "home/login",
-		"/signup": "home/signup",
 		"/dashboard": "home/dashboard",
 
 		// api

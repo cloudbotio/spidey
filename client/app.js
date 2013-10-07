@@ -132,7 +132,7 @@
 					$(this).attr("href", "javascript:;");
 			});
 
-			$(tag + " form[data-module][data-method]").on("submit", function(e){
+			$("form[data-module][data-method]").on("submit", function(e){
 
 				e.preventDefault();
 				sandbox.broadcast.publish("module/call", {
@@ -141,7 +141,7 @@
 				});
 			});
 
-			$(tag + " a[data-module][data-method]").on("click", function(e){
+			$("a[data-module][data-method]").on("click", function(e){
 
 				e.preventDefault();
 				sandbox.broadcast.publish("module/call", {
@@ -150,20 +150,22 @@
 				});
 			});
 
-			$(tag + " a").on("click", function(e){
-
-				e.preventDefault();
-
-				if($(this).attr("data-module")
-					&& $(this).attr("data-method")) {
-					return false;
-				}
-
-				else
-					core.client.render($(this).attr("href"));
-
-				return false;
-			})
+			// TODO: fix this
+			
+//			$("a").on("click", function(e){
+//
+//				e.preventDefault();
+//
+//				if($(this).attr("data-module")
+//					&& $(this).attr("data-method")) {
+//					return false;
+//				}
+//
+//				else
+//					core.client.render($(this).attr("href"));
+//
+//				return false;
+//			})
 
 			$("[data-event][data-on]").each(function(){
 

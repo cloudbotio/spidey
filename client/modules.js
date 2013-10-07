@@ -47,12 +47,12 @@
 				if($("#destination").val())
 
 					// render destination controller
-					core.client.render($("#destination").val());
+					core.client.redirect($("#destination").val());
 
 				else
 
 					// render dashboard controller
-					core.client.render("dashboard");
+					core.client.redirect("/dashboard");
 
 			}).get()
 
@@ -67,11 +67,11 @@
 
 			}).success(function(){
 
-				core.client.render("/");
+				core.client.redirect("/");
 
 			}).error(function(){
 
-				core.client.render("/");
+				core.client.redirect("/");
 
 			}).get();
 

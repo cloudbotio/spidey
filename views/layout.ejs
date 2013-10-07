@@ -13,7 +13,7 @@
 		<!-- Main stylesheet -->
 		<link href="/assets/css/kato.css" rel="stylesheet">
 	</head>
-<body data-subscribe="app/destroy" data-action="$(this).remove()">
+	<body data-subscribe="app/destroy" data-action="$(this).remove()">
 
 	<div id="wrapper">
 	
@@ -26,7 +26,7 @@
 				<li><a href="#tabrules" data-toggle="tab"><i class="icon-rss icon-large"></i></a></li>
 				<li><a href="#tabstats" data-toggle="tab"><i class="icon-bar-chart icon-large"></i></a></li>
 				<li><a href="#tabpipelines" data-toggle="tab"><i class="icon-tasks icon-large"></i></a></li>
-				<li><a href="#tabaccount" data-toggle="tab"><i class="icon-tasks icon-large"></i></a></li>
+				<li><a href="#tabaccount" data-toggle="tab"><i class="icon-gear icon-large"></i></a></li>
 			</ul>
 			<!-- /Icons Sidebar -->
 			
@@ -59,6 +59,7 @@
 					<li><a href="/settings">Settings</a></li>
 					<li><a href="/settings">Billing</a></li>
 					<li><a href="/pipeline">Performance</a></li>
+					<li><a data-module="user" data-method="logout">Logout</a></li>
 				</ul>
 
 			</div>
@@ -70,7 +71,36 @@
 		<!-- Content area -->
 		<div id="content-wrapper">
 			
-			<%- body %>
+			<!-- Site header -->
+			<header class="main-header">
+				
+				<!-- Page title -->
+				<h3>
+					<a id="show-menu" href="#" class="btn btn-primary"><i class="icon-reorder"></i></a>
+					DASHBOARD
+				</h3>
+				
+				<!-- Profile dropdown -->
+				<nav class="user-profile">
+					<a href="#" class="user-dropdown" data-toggle="dropdown">
+						<img src="/assets/img/avatar.jpg" alt="avatar" />
+						<span>Adam Tate</span>
+						<i class="icon-caret-down"></i>
+					</a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#">Profile</a></li>
+						<li><a href="#">Messages</a></li>
+						<li><a href="#">Tasks</a></li>
+						<li><a href="error.html">Show error</a></li>
+						<li><a data-module="user" data-method="logout">Logout</a></li>
+					</ul>
+				</nav>
+			
+			</header>
+			<!-- /Site header -->
+			<div data-container="controllers">
+				<%- body %>
+			</div>
 
 		</div>
 		<!-- /Content area -->

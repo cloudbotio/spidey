@@ -7,11 +7,13 @@ var lang = require("../../language").getDefault();
 module.exports = {
 
 	index: function(req, res) {
-	
-		response(res).view("home/index", {
-			title: lang.home.title,
-			message: lang.home.message
-		});
+		
+		policy(req, res).check(["logged_in"], function(){
+			response(res).view("home/index", {
+				title: lang.home.title,
+				message: lang.home.message
+			});
+		})
 	},
 
 	login: function(req, res) {
@@ -21,16 +23,7 @@ module.exports = {
 			layout: false
 		});
 	},
-
-	signup: function(req, res) {
-
-		response(res).view("home/signup", {
-			title: lang.home.title,
-			message: lang.home.message,
-			destination: req.param("destination") || "dashboard"
-		});
-	},	
-
+	
 	dashboard: function(req, res) {
 
 		policy(req, res).check(["logged_in"], function() { 
