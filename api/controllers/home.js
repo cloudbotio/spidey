@@ -16,10 +16,9 @@ module.exports = {
 
 	login: function(req, res) {
 
-		response(res).view("home/login", {
+		response(res).view("login/index", {
 			title: lang.home.title,
-			message: lang.home.message,
-			destination: req.param("destination") || "dashboard"
+			layout: false
 		});
 	},
 
