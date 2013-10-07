@@ -23,4 +23,5 @@ module.exports = {
     xml: "text/xml",
     pdf: "text/pdf",
     doc: "text/doc",  
+    json: "standard/json",
 }
