@@ -234,7 +234,11 @@
 			_this.prototype.get = function() {
 
 				var connection_url = "http://" + config.api.host;
-				connection_url += ":" + config.api.port + "/api/";
+				
+				if(config.api.port)
+					connection_url += ":" + config.api.port + "/api/";
+				else
+					connection_url += "/api/";
 
 				data = this._data || {};
 				var __this = this;
