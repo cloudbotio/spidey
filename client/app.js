@@ -8,7 +8,7 @@
 
 	var appConfig = {
 
-		state: "development",
+		state: "production",
 
 		development: {
 
@@ -42,7 +42,7 @@
 
 			api: {
 
-				host: "localhost",
+				host: "http://pidey.cloudbot.io",
 				port: 3000
 			},
 
