@@ -239,17 +239,22 @@
 			
 			sandbox.api("rule/create")
 				.data({
-				  source: src,
-				  tunnel: {					
-					steps: [
-					  {
-						pipeline: $("#pipeline").val().toLowerCase(),
-						method: $("#method").val().toLowerCase()
-					  }
-					]
-				  },
-				  repeat: 15
+					source: src,
+					tunnel: {					
+						steps: [
+							{
+								pipeline: $("#pipeline").val().toLowerCase(),
+								method: $("#method").val().toLowerCase()
+							}
+						]
+					},
+					repeat: 15})
+				.success(function(){
+										
 				})
+				.error(function(){
+					
+				}).post();
 			
 		}; exports.create = create;
 		
