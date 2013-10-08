@@ -8,7 +8,7 @@
 
 	var appConfig = {
 
-		state: "production",
+		state: "development",
 
 		development: {
 
@@ -331,10 +331,6 @@
 
 		function init() {
 
-			if(location.hash && app) {
-				app.client.render(location.hash);
-			};
-
 			core.log.info("sandbox initialized successfully...");
 			return exports;
 		}	
@@ -442,6 +438,9 @@
 			});
 
 			$(tag + "a").on("click", function(e){
+				
+				if($(this).attr("href").indexOf("#") != -1)
+					return;
 
 				e.preventDefault();
 
