@@ -42,8 +42,7 @@
 
 			api: {
 
-				host: "spidey.cloudbot.io",
-				port: 3000
+				host: "spidey.cloudbot.io"
 			},
 
 			modules: ["user", "graph", "rule", "error"]
