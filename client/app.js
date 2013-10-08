@@ -42,7 +42,7 @@
 
 			api: {
 
-				host: "http://pidey.cloudbot.io",
+				host: "spidey.cloudbot.io",
 				port: 3000
 			},
 
