@@ -576,8 +576,6 @@
 		};
 
 		function init() {
-			
-			core.client = app.client;
 
 			for(var i = 0; i < sandbox.modules.length; i++)
 				if(!register(sandbox.modules[i]))
@@ -614,7 +612,7 @@
 			core.log.info("app initializing...")
 			sandbox.broadcast.publish("app/ready", {});
 
-
+			core.client = exports.client;
 			return exports;
 		}	
 
