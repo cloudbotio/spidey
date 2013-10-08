@@ -8,7 +8,7 @@
 
 	var appConfig = {
 
-		state: "development",
+		state: "production",
 
 		development: {
 
@@ -378,6 +378,7 @@
 			
 			history.pushState('', uri || _ctrl, uri);
 
+			
 			$(tag).parent().load(uri +" "+ tag, data, function(data){
 
 				bindings();
