@@ -1,10 +1,10 @@
 module.exports = {
     
     // social bundles
-    facebook: "social/facebook",
+    //facebook: "social/facebook",
     twitter: "social/twitter",
-    linkedin: "social/linkedin",
-    instagram: "social/instagram",
+    //linkedin: "social/linkedin",
+    //instagram: "social/instagram",
     
     // ecommerce bundles
     buscape: "ecommerce/buscape",
@@ -20,7 +20,7 @@ module.exports = {
     rss: "text/rss",
     html: "scrapper",
     xml: "standard/xml",
-    pdf: "text/pdf",
-    doc: "text/doc",  
+    //pdf: "text/pdf",
+    //doc: "text/doc",  
     json: "standard/json",
 }

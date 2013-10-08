@@ -225,7 +225,43 @@
 			
 		}; exports.plot_resume = plot_resume;
 		
+		var create = function() {
+			
+			var src = {
+				bundle: $("#bundle").val()
+			};
+			
+			if($("#url").val())
+				src.url = $("#url").val()
+				
+			if($("#query").val())
+				src.q = $("#query").val()
+			
+			sandbox.api("rule/create")
+				.data({
+				  source: src,
+				  tunnel: {					
+					steps: [
+					  {
+						pipeline: $("#pipeline").val().toLowerCase(),
+						method: $("#method").val().toLowerCase()
+					  }
+					]
+				  },
+				  repeat: 15
+				})
+			
+		}; exports.create = create;
+		
 		var init = function() {
+			
+			sandbox.broadcast.subscribe("pipeline/change", function() {
+				var map = {
+					statistic: "Resume",
+					content: "Tags",											
+				};
+				$("#method").val(map[$("#pipeline").val()]);
+			});	
 			
 			core.log.info("starting rule module...");
 			return exports;
