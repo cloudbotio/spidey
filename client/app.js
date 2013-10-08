@@ -576,6 +576,8 @@
 		};
 
 		function init() {
+			
+			core.client = app.client;
 
 			for(var i = 0; i < sandbox.modules.length; i++)
 				if(!register(sandbox.modules[i]))
