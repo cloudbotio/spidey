@@ -4,6 +4,7 @@ var lang = require("../../../language").getDefault();
 
 var model = require("../../../api/adapters/model");
 var config = require("../../../config/bundles.json");
+var log = require("winston");
 
 var Mercadolivre = function(){
 
@@ -18,6 +19,13 @@ var Mercadolivre = function(){
 
 	var getItems = function(cb){
 
+		console.log('1');
+		log.info("STR");
+		log.info("STR1 "+search_url);
+		log.info("STR2 "+task.q);
+		log.info("STR");
+		log.info(util.format(search_url, task.q));
+		log.info("STR "+task.q);
 		// check required parameters
 		if(!task)
 			throw new Error(lang.bundle.no_task || "Invalid or incorrect task specification");
@@ -26,19 +34,25 @@ var Mercadolivre = function(){
 			throw new Error(lang.bundle.no_query || "Missing or invalid query string");
 
 		var request = require('request');
-
+		console.log('2');
 		request(util.format(search_url, task.q), function (error, response, body) {
+			console.log('2b');
 
-			if(error)
+			if(error){
+				console.log('3a '+error);
+
 				throw new Error(util.format(lang.scrapper.problem, err.toString()) ||
 							"Problem scrapping webpage: " + err.message.toString());
 
-			else if (response.statusCode == 200) {
+			} else if (response.statusCode == 200) {
+				console.log('3b');
 
 				var list = JSON.parse(body)["results"];
 				var items = [];
 
+				console.log('4');
 				for(var i = 0; i < list.length; i++) {
+					console.log('5 > '+i);
 
 					var product = list[i];
 
@@ -75,8 +89,7 @@ var Mercadolivre = function(){
 							},
 							url: url
 						}));
-					}
-					catch(e) {
+					} catch(e) {
 						console.log("Problem creating item in Mercadolivre Bundle. " + err.message.toString());
 						throw e;
 					}
