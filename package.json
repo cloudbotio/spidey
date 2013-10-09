@@ -36,7 +36,8 @@
     "natural": "~0.1.22",
     "classifier": "~0.1.0",
     "interval": "0.0.8",
-    "xml2js": "~0.2.8"
+    "xml2js": "~0.2.8",
+    "node-curl": "~0.3.1"
   },
   "devDependencies": {
     "nodeunit": "~0.8.1"

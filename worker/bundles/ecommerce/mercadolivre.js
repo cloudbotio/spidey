@@ -1,9 +1,12 @@
 var util = require("util");
 var request = require("request");
+var curl = require('node-curl');
+
 var lang = require("../../../language").getDefault();
 
 var model = require("../../../api/adapters/model");
 var config = require("../../../config/bundles.json");
+
 var log = require("winston");
 
 var Mercadolivre = function(){
@@ -18,14 +21,7 @@ var Mercadolivre = function(){
 	}; exports.setTask = setTask;
 
 	var getItems = function(cb){
-
-		console.log('1');
-		log.info("STR");
-		log.info("STR1 "+search_url);
-		log.info("STR2 "+task.q);
-		log.info("STR");
-		log.info(util.format(search_url, task.q));
-		log.info("STR "+task.q);
+		
 		// check required parameters
 		if(!task)
 			throw new Error(lang.bundle.no_task || "Invalid or incorrect task specification");
@@ -33,9 +29,12 @@ var Mercadolivre = function(){
 		if(!task.q)
 			throw new Error(lang.bundle.no_query || "Missing or invalid query string");
 
-		var request = require('request');
-		console.log('2');
-		request(util.format(search_url, task.q), function (error, response, body) {
+		search_url = util.format(search_url, task.q);
+		
+		curl(search_url, {SSLVERSION: 3}, function(error, response) {
+			
+			var body = response.body;
+			
 			console.log('2b');
 
 			if(error){
@@ -44,7 +43,7 @@ var Mercadolivre = function(){
 				throw new Error(util.format(lang.scrapper.problem, err.toString()) ||
 							"Problem scrapping webpage: " + err.message.toString());
 
-			} else if (response.statusCode == 200) {
+			} else if (response.status == 200) {
 				console.log('3b');
 
 				var list = JSON.parse(body)["results"];
