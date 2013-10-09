@@ -249,10 +249,20 @@
 						]
 					},
 					repeat: 15})
-				.success(function(){
+				.success(function(response) {
+					
+					if(response.result == "success")
+						app.client.render("/rules");
+					
+					else
+						// TODO: improve error handling
+						core.log.info(response);
 										
 				})
-				.error(function(){
+				.error(function(response) {
+					
+					// TODO: improve error handling
+					core.log.info(response);
 					
 				}).post();
 			

@@ -85,7 +85,8 @@ module.exports = {
 						title: "My Rules",
 						user: u,
 						rule: r[0] || r,
-						results: []
+						results: [],
+						type: t
 					});
 				});
 			});
