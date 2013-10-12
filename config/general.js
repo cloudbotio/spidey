@@ -1,6 +1,6 @@
 module.exports = {
 
-	state: "development",
+	state: "production",
 	lang: "en-US",
 
 	development: {
@@ -60,12 +60,12 @@ module.exports = {
 			protocol: "mongodb://",
 			
 
-			user: "heroku",
-			password: "heroku",
+			user: "spidey",
+			password: "development",
 
-			db: "app18488358",
-			host: "paulo.mongohq.com",
-			port: 10004
+			db: "main",
+			host: "primary.warehouse.cloudbot.io",
+			port: 27017
 		},
 		
 		workers: 1,
