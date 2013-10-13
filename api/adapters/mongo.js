@@ -5,6 +5,11 @@ config = config[config.state].db;
 var DEFAULT_PORT = 27017;
 
 var Mongo = function(config) {
+	
+	if(arguments.callee._singletonInstance)
+		return arguments.callee._singletonInstance;
+	
+	arguments.callee._singletonInstance = this;
 
 	var exports = {};
 
@@ -18,7 +23,7 @@ var Mongo = function(config) {
 		}
 
 		str = str + "@" + config.host + ":" + (config.port || DEFAULT_PORT);
-		str = str + "/" + config.db;
+		str = str + "/" + (config.db || "");
 		return str;
 	}
 
@@ -34,8 +39,17 @@ var Mongo = function(config) {
 		return db[collection];
 
 	}; exports.connect = connect;
+	
+	function close() {
+		
+		return null;
+		this = null;
+		
+	}; exports.close = close;
 
 	function init() {
+		
+		console.log("mongo");
 		return exports;
 	}
 

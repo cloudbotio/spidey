@@ -1,6 +1,6 @@
 module.exports = {
 
-	state: "production",
+	state: "development",
 	lang: "en-US",
 
 	development: {
@@ -64,8 +64,7 @@ module.exports = {
 			password: "development",
 
 			db: "main",
-			host: "primary.warehouse.cloudbot.io",
-			port: 27017
+			host: "warehouse.cloudbot.io"
 		},
 		
 		workers: 1,
