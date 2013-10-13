@@ -1,6 +1,6 @@
 module.exports = {
 
-	state: "development",
+	state: "production",
 	lang: "en-US",
 
 	development: {
@@ -59,12 +59,12 @@ module.exports = {
 		
 			protocol: "mongodb://",
 			
-
 			user: "spidey",
-			password: "development",
-
-			db: "main",
-			host: "warehouse.cloudbot.io"
+			password: "node",
+			
+			db: "app18488358",
+			host: "nikki.mongohq.com",
+			port: 10056,
 		},
 		
 		workers: 1,

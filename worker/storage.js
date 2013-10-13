@@ -1,5 +1,4 @@
 var hoard = require("hoard");
-var model = require("../api/adapters/model");
 
 var Manager = function() {
 	
@@ -16,6 +15,9 @@ var Manager = function() {
 			throw new Error("No data values defined");
 		
 		else {
+			
+			var model = require("../api/adapters/model");
+			
 			var item = model.create("timeserie", {
 				rule: data.serie || data.rule,
 				time: data.time || (new Date()).getTime(),
@@ -28,6 +30,8 @@ var Manager = function() {
 	}; exports.addItem = addItem;
 	
 	var getLatestAnalysis = function(serie, cb) {
+		
+		var model = require("../api/adapters/model");
 		
 		return model.find("timeserie", {
 			
@@ -51,7 +55,9 @@ var Manager = function() {
 		if(!time_restriction["$lt"] || !time_restriction["$lt"])
 			throw new Error("Timespan restriction not defined. " + 
 				"Don't forget to specify both max and min time values.");
-			
+		
+		var model = require("../api/adapters/model");
+		
 		return model.find("timeserie", {
 			
 			rule: serie,
@@ -68,6 +74,7 @@ var Manager = function() {
 	
 	var getItems = function(serie, rest, cb) {
 		
+		var model = require("../api/adapters/model");		
 		return model.find("timeserie", rest, cb);
 		
 	}; exports.getItems = getItems;
