@@ -8,7 +8,7 @@
 
 	var appConfig = {
 
-		state: "production",
+		state: "development",
 
 		development: {
 
@@ -376,14 +376,23 @@
 			var tag = "[" + clientConfig.tags.container + "='controllers']";
 			var _ctrl = ctrl;
 			
-			history.pushState('', uri || _ctrl, uri);
+			broadcast.publish("controller/loading");
+						
+			$.ajax(uri +" "+ tag, {
+			   	data: data,
+			   	timeout: 3000, // 3000 ms
+			   	success: function (data) {
 
-			
-			$(tag).parent().load(uri +" "+ tag, data, function(data){
+					history.pushState('', uri || _ctrl, uri);
+					$(tag).parent().html(data);
+					bindings();
+					broadcast.publish("controller/ready");
+			   	},
+			   	error: function (data){
 
-				bindings();
-				broadcast.publish("controller/ready");
-			})
+					window.location = uri;
+			   	} 
+			});
 
 		}; exports.render = render;
 

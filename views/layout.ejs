@@ -12,6 +12,7 @@
 		<link href='//fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
 		<!-- Main stylesheet -->
 		<link href="/assets/css/kato.css" rel="stylesheet">
+		<link href="/assets/css/style.css" rel="stylesheet">
 	</head>
 	<body data-subscribe="app/destroy" data-action="$(this).remove()">
 
@@ -70,9 +71,10 @@
 		
 		<!-- Content area -->
 		<div id="content-wrapper">
-			
+			<div class="overlay" id="overlay" data-subscribe="controller/loading" data-action="$(this).show()"><span class="loadinggif"></span></div>
+			<div data-subscribe="controller/ready" data-action="$('#overlay').hide()"></div>
 			<!-- /Site header -->
-			<div id="container-wrapper">
+			<div id="container-wrapper">				
 				<div data-container="controllers">
 				<%- body %>
 				</div>

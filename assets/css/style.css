@@ -1,8 +1,30 @@
-body {
+/*body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}*/
+#content-wrapper{ position: relative;}
+.overlay{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.75);
+    z-index: 1000;
+}
+.loadinggif{
+    content: url("../img/loading.gif");
+	vertical-align: middle;
+}
+.overlay .loadinggif{
+	position: fixed;
+    top: 37%;
+    right: 37%;
+}
+.login-form .loadinggif{
+	height: 36px;
+	padding: 0 25px 0 40px;
 }
