@@ -63,7 +63,7 @@
                     </label>
                       
                     <input type="submit" id="login-btn" class="btn btn-success" value="Login" data-event="loading/show" data-subscribe="loading/show" data-action="$(this).hide()">
-                    <span class="loadinggif" id="loadinggif" style="display: none;" data-subscribe="loading/show" data-action="$(this).show()"></span>
+                    <span class="loadinggif" id="loadinggif" style="display: none;" data-subscribe="loading/show" data-action="$(this).show()" style="max-width: 20px; max-height: 20px;"></span>
                     <span data-subscribe="user/login/error" data-action="$('#loadinggif').hide();$('#login-btn').fadeIn('slow');"></span>
                 </div>
             </form>

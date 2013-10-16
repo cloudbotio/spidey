@@ -16,9 +16,10 @@ a {
     z-index: 1000;
 }
 .loadinggif{
-    content: url("../img/loading.gif");
-	vertical-align: middle;
+  content: url("../img/mini-loading.gif");
+  vertical-align: middle;	
 }
+
 .overlay .loadinggif{
 	position: fixed;
     top: 37%;
