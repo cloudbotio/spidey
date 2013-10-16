@@ -378,7 +378,7 @@
 			
 			broadcast.publish("controller/loading");
 			
-			$(tag).load(uri +" "+ tag, function (responseText, textStatus, req) {
+			$(tag).parent().load(uri +" "+ tag, data, function (responseText, textStatus, req) {
 
         		if (textStatus == "error") {
 
@@ -389,8 +389,6 @@
         		else {
 
 					history.pushState('', uri || _ctrl, uri);
-					$(tag).parent().html(data);
-					
 					bindings();
 					broadcast.publish("controller/ready");
 			   	}
@@ -418,6 +416,12 @@
 
 			if(tag) tag = tag + " ";
 			else tag = "";
+
+			// TODO: remove these scripts {
+
+			$.getScript("/js/lib/theme.js");
+
+			// }
 			
 			$(tag + "a").each(function(){
 				if(!$(this).attr("href") || !$(this).attr("href").length)
