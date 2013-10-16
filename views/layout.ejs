@@ -71,8 +71,12 @@
 		
 		<!-- Content area -->
 		<div id="content-wrapper">
-			<div class="overlay" id="overlay" data-subscribe="controller/loading" data-action="$(this).show()"><span class="loadinggif"></span></div>
-			<div data-subscribe="controller/ready" data-action="$('#overlay').hide()"></div>
+			<div class="overlay" id="overlay" data-subscribe="controller/loading" data-action="$('#overlay').fadeIn('fast')">
+				<span class="loadinggif"></span>
+			</div>
+
+			<div data-subscribe="controller/ready" data-action="$('#overlay').fadeOut('fast')"></div>
+
 			<!-- /Site header -->
 			<div id="container-wrapper">				
 				<div data-container="controllers">
