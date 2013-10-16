@@ -8,7 +8,7 @@
 
 	var appConfig = {
 
-		state: "development",
+		state: "production",
 
 		development: {
 
@@ -377,21 +377,21 @@
 			var _ctrl = ctrl;
 			
 			broadcast.publish("controller/loading");
-						
-			$.ajax(uri +" "+ tag, {
-			   	data: data,
-			   	timeout: 3000, // 3000 ms
-			   	success: function (data) {
+			
+			$(tag).parent().load(uri +" "+ tag, data, function (responseText, textStatus, req) {
+
+        		if (textStatus == "error") {
+
+          			document.location.replace(uri);
+          			return;
+        		}
+			   	
+        		else {
 
 					history.pushState('', uri || _ctrl, uri);
-					$(tag).parent().html(data);
 					bindings();
 					broadcast.publish("controller/ready");
-			   	},
-			   	error: function (data){
-
-					window.location = uri;
-			   	} 
+			   	}
 			});
 
 		}; exports.render = render;
@@ -416,6 +416,12 @@
 
 			if(tag) tag = tag + " ";
 			else tag = "";
+
+			// TODO: remove these scripts {
+
+			$.getScript("/js/lib/theme.js");
+
+			// }
 			
 			$(tag + "a").each(function(){
 				if(!$(this).attr("href") || !$(this).attr("href").length)
