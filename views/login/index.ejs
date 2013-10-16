@@ -10,7 +10,7 @@
     <!-- Le styles -->
     <link href="/assets/login/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/login/css/bootstrap-responsive.min.css" rel="stylesheet">
-
+    <link href="/assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/login/css/typica-login.css">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -62,7 +62,9 @@
                         <input type="checkbox" id="inlineCheckbox1" value="option1"> Remember me
                     </label>
                       
-                    <input type="submit" id="login-btn" class="btn btn-success" value="Login">
+                    <input type="submit" id="login-btn" class="btn btn-success" value="Login" data-event="loading/show" data-subscribe="loading/show" data-action="$(this).hide()">
+                    <span class="loadinggif" id="loadinggif" style="display: none;" data-subscribe="loading/show" data-action="$(this).show()"></span>
+                    <span data-subscribe="user/login/error" data-action="$('#loadinggif').hide();$('#login-btn').fadeIn('slow');"></span>
                 </div>
             </form>
         </div>

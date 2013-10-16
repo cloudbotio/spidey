@@ -25,7 +25,8 @@
 		}; exports.me = me;
 
 		var login = function(data) {
-	
+			
+			broadcast.publish("loading/show");
 			// call the api
 			sandbox.api("user/login", {
 
