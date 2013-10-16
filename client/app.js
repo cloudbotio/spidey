@@ -378,20 +378,22 @@
 			
 			broadcast.publish("controller/loading");
 			
-			$.ajax(uri, {
-			   	data: data,
-			   	timeout: 3000, // 3000 ms
-			   	success: function (data) {
+			$(tag).load(uri +" "+ tag, function (responseText, textStatus, req) {
+
+        		if (textStatus == "error") {
+
+          			document.location.replace(uri);
+          			return;
+        		}
+			   	
+        		else {
 
 					history.pushState('', uri || _ctrl, uri);
 					$(tag).parent().html(data);
+					
 					bindings();
 					broadcast.publish("controller/ready");
-			   	},
-			   	error: function (data){
-
-					window.location = uri;
-			   	} 
+			   	}
 			});
 
 		}; exports.render = render;
