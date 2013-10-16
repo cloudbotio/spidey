@@ -377,8 +377,8 @@
 			var _ctrl = ctrl;
 			
 			broadcast.publish("controller/loading");
-						
-			$.ajax(uri +" "+ tag, {
+			
+			$.ajax(uri, {
 			   	data: data,
 			   	timeout: 3000, // 3000 ms
 			   	success: function (data) {
