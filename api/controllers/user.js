@@ -4,6 +4,9 @@ var model = require("../adapters/model");
 var policy = require("../policies/");
 var response = require("../adapters/response");
 
+var config = require("../../config/general");
+var cookieMaxAge = config[config.state].cookieMaxAge;
+
 var language = require("../../language");
 var lang = language.getDefault();
 
@@ -117,9 +120,13 @@ module.exports = {
 					return;
 				}
 
-				res.cookie("authenticated", true);
-				res.cookie("user_id", result[0]._id);
-				res.cookie("user", result[0]);
+				var cookieOptions = {}
+				if(req.param("rememberme")=="true")
+					cookieOptions['maxAge'] = cookieMaxAge;
+
+				res.cookie("authenticated", true, cookieOptions);
+				res.cookie("user_id", result[0]._id, cookieOptions);
+				res.cookie("user", result[0], cookieOptions);
 
 				response(res).json({
 

@@ -31,7 +31,8 @@
 			sandbox.api("user/login", {
 
 				email: $("#email").val(),
-				password: $("#password").val()
+				password: $("#password").val(),
+				rememberme: $("#inlineCheckbox1").is(":checked")
 
 			}).error(function(response){
 

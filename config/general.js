@@ -68,6 +68,8 @@ module.exports = {
 		},
 		
 		workers: 1,
-		watchers: 1
+		watchers: 1,
+
+		cookieMaxAge : 1*86400000 //time in milliseconds. one day has 86400000 ms. set to "session" to disable "remember me"!
 	}
 }
